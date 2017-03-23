@@ -3,7 +3,7 @@
 # file: saytime.rb
 
 require 'wavefile'
-require 'rxfhelper'
+
 
 # Making the WAV files
 # ======================
@@ -16,33 +16,10 @@ require 'rxfhelper'
 # software called Audacity
 
 
-module LIBRARY
-
-  def fetch_filepath(filename)
-
-    if File.basename() == filename then
-      lib = File.dirname(__FILE__)
-      File.join(lib,'..','wav',filename)
-    else
-      filename
-    end
-
-  end
-  
-  def fetch_file(filename)
-
-    filepath = fetch_filepath filename
-    read filepath
-  end
-
-  def read(s)
-    RXFHelper.read(s).first
-  end
-end
 
 class Saytime
   include WaveFile
-  include LIBRARY
+
 
   def initialize(filepath='')
 
