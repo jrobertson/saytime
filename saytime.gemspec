@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'saytime'
-  s.version = '0.1.0'
+  s.version = '0.1.1'
   s.summary = 'Speaks the local time in English using WAV files stiched together'
   s.authors = ['James Robertson']
   s.files = Dir['lib/saytime.rb','wav/*.wav']

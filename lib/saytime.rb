@@ -47,7 +47,7 @@ class Saytime
   def initialize(filepath='')
 
     @filepath = filepath
-    Dir.chdir filepath
+    Dir.chdir filepath if filepath
 
   end
 
