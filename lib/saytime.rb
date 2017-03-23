@@ -61,7 +61,7 @@ class Saytime
   def make_wav()
 
     a = ['the_time_is']
-    h, m, meridiem = Time.now.strftime("%H %M %P").split
+    h, m, meridiem = Time.now.strftime("%-I %M %P").split
     a << h
     a.concat (m.length > 1 and m[0] != '1' ? [m[0] + '0', m[1]] : [m])
     a << meridiem
