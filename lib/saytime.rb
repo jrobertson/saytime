@@ -61,12 +61,16 @@ class Saytime
   private
 
   def append_wavs(wav_files, target_wav)
+    
+    lib = File.dirname(__FILE__)
+    
 
     Writer.new(target_wav, Format.new(:stereo, :pcm_16, 44100)) do |writer|
 
       wav_files.each do |name|
 
-        file_name = @filepath.empty? ? name : File.join(@filepath, name)
+        file_name = @filepath.empty? ? File.join(lib,'..','wav',name)  : \
+                                                     File.join(@filepath, name)
 
         Reader.new(file_name).each_buffer(samples_per_buffer=4096) do |buffer|
           writer.write(buffer)
